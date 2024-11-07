@@ -37,6 +37,7 @@ class Karyawan extends \yii\db\ActiveRecord
         return [
             [['nama_karyawan', 'email', 'alamat', 'telepon', 'nik', 'jabatan', 'divisi_id', 'tgl_bergabung'], 'required'],
             [['divisi_id'], 'integer'],
+            [['email'], 'email'],
             [['tgl_bergabung'], 'safe'],
             [['nama_karyawan', 'email', 'alamat', 'jabatan'], 'string', 'max' => 255],
             [['telepon'], 'string', 'max' => 12],
