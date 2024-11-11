@@ -1,0 +1,2 @@
+--jalankan perintah ini di terminal untuk migrasi tabel ke database
+php yii migrate
