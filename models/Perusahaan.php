@@ -30,6 +30,7 @@ class Perusahaan extends \yii\db\ActiveRecord
     {
         return [
             [['nama_perusahaan', 'alamat', 'email_perusahaan', 'website_perusahaan'], 'required'],
+            [['email_perusahaan'], 'email'],
             [['nama_perusahaan', 'alamat', 'email_perusahaan', 'website_perusahaan'], 'string', 'max' => 255],
         ];
     }
