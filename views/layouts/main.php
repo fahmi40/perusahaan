@@ -6,6 +6,7 @@
  */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 $bundle = yiister\gentelella\assets\Asset::register($this);
 
@@ -36,15 +37,15 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
 
-                <!-- <div class="navbar nav_title" style="border: 0;">
-                    <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
-                </div> -->
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="/" class="site_title"><span>Perusahaan</span></a>
+                </div>
                 <div class="clearfix"></div>
 
                 <!-- menu prile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="http://placehold.it/128x128" alt="..." class="img-circle profile_img">
+                        <img src="<?=Url::base(true)?>/images/user.png" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -56,43 +57,38 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                 <br />
 
                 <!-- sidebar menu -->
-                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
-                    <div class="menu_section">
-                        <h3>General</h3>
-                        <?=
-                        \yiister\gentelella\widgets\Menu::widget(
-                            [
-                                "items" => [	
-                                    ["label" => "Home", "url" => "site/index", "icon" => "home"],
-                                    ["label" => "Perusahaan", "url" => ["perusahaan/index"], "icon" => "far fa-building"],
-                                    ["label" => "Divisi", "url" => ["divisi/index"], "icon" => "fas fa-sitemap"],
-                                    ["label" => "Karyawan", "url" => ["karyawan/index"], "icon" => "fas fa-user"],
-                                ],
-                            ]
-                        )
-                        ?>
-                    </div>
-
-                </div>
+                <?php
+                $this->beginContent('@app/views/layouts/production/sidebar-menu.php');
+                $this->endContent();
+                ?>
                 <!-- /sidebar menu -->
 
+                <!-- /menu footer buttons -->
+                <!-- <div class="sidebar-footer hidden-small">
+                    <a data-toggle="tooltip" data-placement="top" title="Settings">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Lock">
+                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Logout">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    </a>
+                </div> -->
                 <!-- /menu footer buttons -->
             </div>
         </div>
 
         <!-- top navigation -->
-        <div class="top_nav">
+        
+        <?php
+            $this->beginContent('@app/views/layouts/production/header.php');
+            $this->endContent();
+        ?>
 
-            <div class="nav_menu">
-                <nav class="" role="navigation">
-                    <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                    </div>
-                </nav>
-            </div>
-
-        </div>
         <!-- /top navigation -->
 
         <!-- page content -->
@@ -122,8 +118,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                <!-- Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com" rel="nofollow" target="_blank">Colorlib</a><br />
-                Extension for Yii framework 2 by <a href="http://yiister.ru" rel="nofollow" target="_blank">Yiister</a> -->
+                Perusahaan
             </div>
             <div class="clearfix"></div>
         </footer>
